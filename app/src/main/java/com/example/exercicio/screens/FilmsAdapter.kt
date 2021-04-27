@@ -26,8 +26,8 @@ class FilmsAdapter(private val films: List<Film>, val navigateToDetails: (Film) 
     inner class FilmsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(film: Film) {
             itemView.titleTv.text = film.title
-            itemView.episodeTv.text = film.defEpisode()
-            itemView.filmIv.setImageResource(film.defImage())
+            itemView.episodeTv.text = film.retrieveEpisode()
+            itemView.filmIv.setImageResource(film.retrieveEpisodeImage())
             itemView.setOnClickListener { navigateToDetails(film) }
         }
     }

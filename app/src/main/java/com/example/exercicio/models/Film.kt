@@ -16,7 +16,7 @@ data class Film(
 
 ) : Serializable {
 
-    fun defImage(): Int {
+    fun retrieveEpisodeImage(): Int {
         return when (episodeId) {
             4 -> R.drawable.episode1
             5 -> R.drawable.episode2
@@ -27,7 +27,7 @@ data class Film(
         }
     }
 
-    fun defEpisode(): String {
+    fun retrieveEpisode(): String {
         return when (episodeId) {
             4 -> "Episode I"
             5 -> "Episode II"

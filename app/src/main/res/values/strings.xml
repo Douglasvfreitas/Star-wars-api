@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">exercicio</string>
+    <string name="app_name">Star Wars</string>
     <string name="text" />
     <string name="title_activity_film_details">FilmDetailsActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -10,4 +10,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="film_details_resume_label">Openning:</string>
+    <string name="films_details_director_label">Director:</string>
+    <string name="films_details_producer_label">Producer:</string>
 </resources>
