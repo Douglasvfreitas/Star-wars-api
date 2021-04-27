@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.exercicio.*
+import com.example.exercicio.R
 import com.example.exercicio.models.Film
 import com.example.exercicio.models.ScreenState
 import com.example.exercicio.params.FilmParams
@@ -23,40 +23,40 @@ class FilmsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         filmsRv.layoutManager = LinearLayoutManager(this)
-        resultState()
+        handleScreenStates()
         viewModel.retrieveMovies()
     }
 
-    fun resultState() {
+    private fun handleScreenStates() {
         viewModel.getScreenState().observe(this, Observer { screenState ->
             when (screenState) {
-                is ScreenState.Error -> erroState()
-                is ScreenState.Loading -> loadState(true)
-                is ScreenState.Result -> handlerResult(screenState.value)
+                is ScreenState.Error -> handleError()
+                is ScreenState.Loading -> handleLoading(true)
+                is ScreenState.Result -> handleResult(screenState.value)
             }
         })
     }
 
-    fun loadState(isLoading: Boolean) {
+    private fun handleLoading(isLoading: Boolean) {
         progessBar.isVisible = isLoading
         filmsRv.isVisible = !isLoading
     }
 
-    fun handlerResult(films: List<Film>) {
-        loadState(false)
+    private fun handleResult(films: List<Film>) {
+        handleLoading(false)
         filmsRv.adapter = FilmsAdapter(
             films = films, navigateToDetails = {
-                moveFilmDetails(it)
+                moveToFilmDetails(it)
             })
     }
 
-    fun erroState() {
+    private fun handleError() {
         Toast.makeText(this, ERROR_MENSSAGE, Toast.LENGTH_SHORT).show()
-        loadState(false)
+        handleLoading(false)
     }
 
 
-    fun moveFilmDetails(film: Film) {
+    private fun moveToFilmDetails(film: Film) {
         startActivity(Intent(this, FilmDetailsActivity::class.java).apply {
             putExtra(FilmParams.FILM_FILM, film)
         })
