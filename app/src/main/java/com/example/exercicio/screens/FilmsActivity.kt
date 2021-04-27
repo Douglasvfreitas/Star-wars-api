@@ -6,13 +6,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exercicio.R
 import com.example.exercicio.models.Film
 import com.example.exercicio.models.ScreenState
 import com.example.exercicio.params.FilmParams
-import kotlinx.android.synthetic.main.activity_main.*
-
+import kotlinx.android.synthetic.main.activity_films.*
 
 class FilmsActivity : AppCompatActivity() {
 
@@ -20,9 +18,8 @@ class FilmsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_films)
 
-        filmsRv.layoutManager = LinearLayoutManager(this)
         handleScreenStates()
         viewModel.retrieveMovies()
     }
@@ -38,7 +35,7 @@ class FilmsActivity : AppCompatActivity() {
     }
 
     private fun handleLoading(isLoading: Boolean) {
-        progessBar.isVisible = isLoading
+        loadingState.isVisible = isLoading
         filmsRv.isVisible = !isLoading
     }
 
@@ -55,7 +52,6 @@ class FilmsActivity : AppCompatActivity() {
         handleLoading(false)
     }
 
-
     private fun moveToFilmDetails(film: Film) {
         startActivity(Intent(this, FilmDetailsActivity::class.java).apply {
             putExtra(FilmParams.FILM_FILM, film)
@@ -65,7 +61,6 @@ class FilmsActivity : AppCompatActivity() {
     companion object {
         const val ERROR_MENSSAGE = "Erro no carregamento das informações"
     }
-
 }
 
 
