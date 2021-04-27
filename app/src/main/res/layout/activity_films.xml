@@ -5,22 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_bg"
-    tools:context=".screens.FilmsActivity">
+    tools:context=".screens.FilmsActivity"
+    android:fitsSystemWindows="true">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/filmsRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/film_item"
-        android:fitsSystemWindows="true"/>
+        tools:listitem="@layout/film_item"/>
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/loadingState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/r2b8"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/retryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:paddingVertical="8dp"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:text="@string/film_retry_button_label"
+        android:visibility="gone"/>
 
 </RelativeLayout>

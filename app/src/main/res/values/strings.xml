@@ -13,4 +13,5 @@
     <string name="film_details_resume_label">Openning:</string>
     <string name="films_details_director_label">Director:</string>
     <string name="films_details_producer_label">Producer:</string>
+    <string name="film_retry_button_label">Tentar novamente</string>
 </resources>

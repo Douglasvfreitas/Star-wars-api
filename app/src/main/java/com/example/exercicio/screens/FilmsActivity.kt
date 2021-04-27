@@ -2,6 +2,7 @@ package com.example.exercicio.screens
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -22,6 +23,7 @@ class FilmsActivity : AppCompatActivity() {
 
         handleScreenStates()
         viewModel.retrieveMovies()
+        listenButton()
     }
 
     private fun handleScreenStates() {
@@ -37,6 +39,13 @@ class FilmsActivity : AppCompatActivity() {
     private fun handleLoading(isLoading: Boolean) {
         loadingState.isVisible = isLoading
         filmsRv.isVisible = !isLoading
+        retryButton.isVisible = false
+    }
+
+    private fun listenButton(){
+        retryButton.setOnClickListener {
+            viewModel.retrieveMovies()
+        }
     }
 
     private fun handleResult(films: List<Film>) {
@@ -48,8 +57,12 @@ class FilmsActivity : AppCompatActivity() {
     }
 
     private fun handleError() {
-        Toast.makeText(this, ERROR_MENSSAGE, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, ERROR_MENSSAGE, Toast.LENGTH_LONG).apply {
+            setGravity(Gravity.CENTER,0,0)
+            show()
+        }
         handleLoading(false)
+        retryButton.isVisible = true
     }
 
     private fun moveToFilmDetails(film: Film) {
@@ -59,8 +72,6 @@ class FilmsActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val ERROR_MENSSAGE = "Erro no carregamento das informações"
+        const val ERROR_MENSSAGE = "Sentimos muito, ocorreu um erro"
     }
 }
-
-
