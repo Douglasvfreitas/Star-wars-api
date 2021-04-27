@@ -5,5 +5,4 @@ import io.reactivex.Observable
 
 interface FilmsService {
     fun listMovies() : Observable<List<Film>>
-    
 }
