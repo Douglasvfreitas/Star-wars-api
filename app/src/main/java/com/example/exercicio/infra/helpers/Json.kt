@@ -1,4 +1,4 @@
-package com.example.exercicio.remote
+package com.example.exercicio.infra.helpers
 
 import kotlinx.serialization.json.Json
 
@@ -12,6 +12,4 @@ object Json {
             useArrayPolymorphism = true
         }
     }
-
-
 }

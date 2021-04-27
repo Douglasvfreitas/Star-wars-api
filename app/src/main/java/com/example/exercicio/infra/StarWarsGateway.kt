@@ -1,11 +1,13 @@
-package com.example.exercicio
+package com.example.exercicio.infra
 
 
+import com.example.exercicio.infra.models.FilmResponse
+import com.example.exercicio.infra.models.FilmsResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface FilmsService {
+interface StarWarsGateway {
 
     @GET("films")
     fun listMovies(): Observable<FilmsResponse>

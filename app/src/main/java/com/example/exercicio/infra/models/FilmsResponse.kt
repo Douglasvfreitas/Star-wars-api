@@ -1,4 +1,4 @@
-package com.example.exercicio
+package com.example.exercicio.infra.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

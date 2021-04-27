@@ -1,4 +1,4 @@
-package com.example.exercicio
+package com.example.exercicio.params
 
 
 object FilmParams{

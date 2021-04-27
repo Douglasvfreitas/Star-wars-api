@@ -1,4 +1,4 @@
-package com.example.exercicio.activity
+package com.example.exercicio.screens
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exercicio.*
-import com.example.exercicio.remote.RetrofitClient
+import com.example.exercicio.infra.StarWarsGateway
+import com.example.exercicio.models.Film
+import com.example.exercicio.models.ScreenState
+import com.example.exercicio.params.FilmParams
+import com.example.exercicio.infra.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
@@ -18,10 +22,10 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class FilmsActivity : AppCompatActivity() {
 
 
-    private val remote = RetrofitClient.createService(FilmsService::class.java)
+    private val remote = RetrofitClient.createService(StarWarsGateway::class.java)
     private val disposer = CompositeDisposable()
     private val filmState = MutableLiveData<ScreenState<List<Film>>>()
 

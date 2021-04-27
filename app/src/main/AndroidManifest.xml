@@ -15,10 +15,10 @@
         android:theme="@style/Theme.Exercicio"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.FilmDetailsActivity"
+            android:name=".screens.FilmDetailsActivity"
             android:label="@string/title_activity_film_details"
             android:theme="@style/Theme.Exercicio.NoActionBar"></activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".screens.FilmsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,6 @@
-package com.example.exercicio.remote
+package com.example.exercicio.infra
 
+import com.example.exercicio.infra.helpers.Json
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient

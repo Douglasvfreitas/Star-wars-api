@@ -1,9 +1,9 @@
-package com.example.exercicio.activity
+package com.example.exercicio.screens
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.exercicio.Film
-import com.example.exercicio.FilmParams
+import com.example.exercicio.models.Film
+import com.example.exercicio.params.FilmParams
 import com.example.exercicio.R
 import kotlinx.android.synthetic.main.activity_film_details.*
 

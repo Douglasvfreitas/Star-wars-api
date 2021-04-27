@@ -1,9 +1,11 @@
-package com.example.exercicio
+package com.example.exercicio.screens
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.exercicio.R
+import com.example.exercicio.models.Film
 import kotlinx.android.synthetic.main.film_item.view.*
 
 class FilmsAdapter(private val films: List<Film>, val navigateToDetails: (Film) -> Unit = {}) :

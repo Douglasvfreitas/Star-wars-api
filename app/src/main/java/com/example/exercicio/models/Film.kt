@@ -1,5 +1,6 @@
-package com.example.exercicio
+package com.example.exercicio.models
 
+import com.example.exercicio.R
 import java.io.Serializable
 
 
@@ -37,5 +38,3 @@ data class Film(
         }
     }
 }
-
-data class Character(val name: String, val gender: String)
