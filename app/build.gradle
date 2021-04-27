@@ -54,6 +54,4 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
     implementation "com.squareup.retrofit2:converter-gson:2.8.1"
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
 }
