@@ -1,8 +1,10 @@
 package com.example.exercicio.infra
 
 
-import com.example.exercicio.infra.models.FilmResponse
-import com.example.exercicio.infra.models.FilmsResponse
+import com.example.exercicio.infra.models.film.FilmResponse
+import com.example.exercicio.infra.models.film.FilmsResponse
+import com.example.exercicio.infra.models.character.CharactersResponse
+import com.example.exercicio.infra.models.planet.PlanetsResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -14,4 +16,11 @@ interface StarWarsGateway {
 
     @GET("films/{id}")
     fun getMovie(@Path("id") id: Int) : Observable<FilmResponse>
+
+    @GET("people")
+    fun listPeople(): Observable<CharactersResponse>
+
+    @GET("planets")
+    fun listPlanet(): Observable<PlanetsResponse>
+
 }

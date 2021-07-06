@@ -14,16 +14,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StarWars"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".screens.FilmDetailsActivity"
-            android:label="@string/title_activity_film_details"
-            android:theme="@style/Theme.StarWars.NoActionBar"/>
-        <activity android:name=".screens.FilmsActivity">
+        <activity android:name=".screens.home.HomeActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".screens.film.FilmDetailsActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
+
+        <activity
+            android:name=".screens.film.FilmsActivity"/>
+
+        <activity
+            android:name=".screens.character.CharactersActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
+
+
+        <activity
+            android:name=".screens.character.CharactersDetailsActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
+
+        <activity
+            android:name=".screens.planet.PlanetsActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
+
+        <activity
+            android:name=".screens.planet.PlanetsDetailsActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
     </application>
 
 </manifest>

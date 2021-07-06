@@ -10,8 +10,33 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="welcome">Seja bem vindo!</string>
+    <string name="inform">Use o menu abaixo para acessar informações sobre Star Wars:</string>
+
+    <string name="films">Films</string>
     <string name="film_details_resume_label">Openning:</string>
     <string name="films_details_director_label">Director:</string>
     <string name="films_details_producer_label">Producer:</string>
     <string name="film_retry_button_label">Tentar novamente</string>
+
+    <string name="characters">Characters</string>
+    <string name="character_name">Name</string>
+    <string name="character_details_gender_label">Gender:</string>
+    <string name="character_birth_year">Birth year:</string>
+    <string name="character_eye_color">Eye color:</string>
+    <string name="character_skin_color">Skin color:</string>
+    <string name="character_hair_color">Hair color:</string>
+    <string name="character_mass">Mass:</string>
+    <string name="character_height">Height:</string>
+
+    <string name="planets">Planets</string>
+    <string name="planet_rotation_period">Rotation period:</string>
+    <string name="planet_orbital_period">Orbital period:</string>
+    <string name="planet_diameter">Diameter:</string>
+    <string name="planet_climate">Climate:</string>
+    <string name="planet_gravity">Gravity:</string>
+    <string name="planet_details_surface_water_label">Surface water</string>
+    <string name="planet_terrain">Terrain:</string>
+    <string name="planet_population">Population:</string>
+
 </resources>

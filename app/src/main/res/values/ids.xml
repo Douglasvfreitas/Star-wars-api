@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="planetRotation" type="id" />
+    <item name="rotationDetails" type="id" />
+    <item name="orbitalPeriod" type="id" />
+    <item name="orbitalPeriodDetails" type="id" />
+</resources>

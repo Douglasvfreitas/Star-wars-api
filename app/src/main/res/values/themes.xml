@@ -19,6 +19,15 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="homeButtons">
+        android:textStyle="bold"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:textColor="@color/white"
+        app:backgroundTint="@android:color/transparent"
+        android:textSize="24sp"
+    </style>
+
     <style name="Theme.Exercicio.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.Exercicio.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
