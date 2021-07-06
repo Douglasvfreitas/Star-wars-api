@@ -24,4 +24,10 @@ class FilmsInfra : FilmsService {
             }
         }
     }
+
+    private fun retrieveFilmId(url: String): String = url.filter { it.isDigit() }
+
+    private fun retrieveFilmImage(id: String): String {
+        return "https://starwars-visualguide.com/assets/img/films/$id.jpg"
+    }
 }

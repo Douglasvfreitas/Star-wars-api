@@ -1,4 +1,4 @@
-package com.example.exercicio.screens
+package com.example.exercicio.screens.film
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import com.example.exercicio.R
 import com.example.exercicio.models.Film
 import com.example.exercicio.models.ScreenState
-import com.example.exercicio.params.FilmParams
+import com.example.exercicio.params.Params
 import kotlinx.android.synthetic.main.activity_films.*
 
 class FilmsActivity : AppCompatActivity() {
@@ -67,7 +67,7 @@ class FilmsActivity : AppCompatActivity() {
 
     private fun moveToFilmDetails(film: Film) {
         startActivity(Intent(this, FilmDetailsActivity::class.java).apply {
-            putExtra(FilmParams.FILM_FILM, film)
+            putExtra(Params.FILM_FILM, film)
         })
     }
 

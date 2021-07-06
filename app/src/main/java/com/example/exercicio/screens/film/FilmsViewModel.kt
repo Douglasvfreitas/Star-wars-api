@@ -1,4 +1,4 @@
-package com.example.exercicio.screens
+package com.example.exercicio.screens.film
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -38,5 +38,4 @@ internal class FilmsViewModel : ViewModel() {
                 }
             )
     }
-
 }

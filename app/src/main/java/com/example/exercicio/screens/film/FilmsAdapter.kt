@@ -1,4 +1,4 @@
-package com.example.exercicio.screens
+package com.example.exercicio.screens.film
 
 import android.view.LayoutInflater
 import android.view.View

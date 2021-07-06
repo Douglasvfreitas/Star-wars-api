@@ -1,10 +1,10 @@
-package com.example.exercicio.screens
+package com.example.exercicio.screens.film
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.exercicio.R
 import com.example.exercicio.models.Film
-import com.example.exercicio.params.FilmParams
+import com.example.exercicio.params.Params
 import kotlinx.android.synthetic.main.activity_film_details.*
 
 class FilmDetailsActivity : AppCompatActivity() {
@@ -17,7 +17,7 @@ class FilmDetailsActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        val film = intent.extras?.getSerializable(FilmParams.FILM_FILM) as? Film
+        val film = intent.extras?.getSerializable(Params.FILM_FILM) as? Film
 
         film?.let {
             filmImageDet.setImageResource(film.retrieveEpisodeImage())
