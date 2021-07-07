@@ -37,7 +37,7 @@ class CharactersDetailsActivity : AppCompatActivity() {
         Picasso
             .get()
             .load(urlImage)
-            .error(R.drawable.luke_skywalker)
+            .error(R.drawable.episode1)
             .into(characterImage)
     }
 }

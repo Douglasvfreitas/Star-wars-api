@@ -57,7 +57,7 @@ class CharactersActivity : AppCompatActivity() {
     }
 
     private fun handleError() {
-        Toast.makeText(this, ERROR_MENSSAGE, Toast.LENGTH_LONG).apply {
+        Toast.makeText(this, ERROR_MESSAGE, Toast.LENGTH_LONG).apply {
             setGravity(Gravity.CENTER, 0, 0)
             show()
         }
@@ -72,6 +72,6 @@ class CharactersActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val ERROR_MENSSAGE = "Sentimos muito, ocorreu um erro"
+        const val ERROR_MESSAGE = "Sentimos muito, ocorreu um erro"
     }
 }
