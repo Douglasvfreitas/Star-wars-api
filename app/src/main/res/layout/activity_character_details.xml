@@ -1,0 +1,235 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg"
+    android:fitsSystemWindows="true"
+    android:padding="24dp"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/character_details_gender_label"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.379"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/genderDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/gender"
+            app:layout_constraintStart_toStartOf="@+id/birthYearDetails"
+            tools:text="Male" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/birthYearDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/birthYear"
+            app:layout_constraintTop_toTopOf="@+id/birthYear"
+            tools:text="19BBY" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/birthYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/character_birth_year"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/gender"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/eyeColor" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/eyeColorDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/birthYearDetails"
+            app:layout_constraintTop_toTopOf="@+id/eyeColor"
+            tools:text="Blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/eyeColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/character_eye_color"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/skinColor"
+            app:layout_constraintBottom_toTopOf="@id/birthYear"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/skinColorDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/birthYearDetails"
+            app:layout_constraintTop_toTopOf="@+id/skinColor"
+            tools:text="Fair" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/skinColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/character_skin_color"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/eyeColor"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/hairColor" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hairColorDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/birthYearDetails"
+            app:layout_constraintTop_toTopOf="@+id/hairColor"
+            tools:text="Blond" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hairColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/character_hair_color"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/skinColor"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/mass" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/massDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/birthYearDetails"
+            app:layout_constraintTop_toTopOf="@+id/mass"
+            tools:text="77" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/character_mass"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/hairColor"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/height"
+            app:layout_constraintVertical_bias="0.973"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/heightDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/birthYearDetails"
+            app:layout_constraintTop_toTopOf="@+id/height"
+            tools:text="172" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/character_height"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/mass"
+            app:layout_constraintStart_toStartOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalGuideline"
+            app:layout_constraintVertical_bias="0.973"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/characterImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/verticalStartGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/characterNameDetails"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@drawable/luke_skywalker"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/characterNameDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:padding="24dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Luke Skywalker" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+

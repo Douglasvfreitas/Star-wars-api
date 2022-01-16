@@ -1,0 +1,257 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_bg"
+    android:fitsSystemWindows="true"
+    android:padding="24dp"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/surfaceWater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/planet_details_surface_water_label"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.379"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/surfaceWaterDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/surfaceWater"
+            app:layout_constraintStart_toStartOf="@+id/terrainDetails"
+            tools:text="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/populationDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/planetRotation"
+            app:layout_constraintTop_toTopOf="@+id/population"
+            tools:text="200000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/population"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/planet_population"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/surfaceWater"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@+id/terrain" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/terrainDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/planetRotation"
+            app:layout_constraintTop_toTopOf="@+id/terrain"
+            tools:text="Desert" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/terrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/planet_terrain"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/population"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@+id/gravity" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/gravityDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/terrainDetails"
+            app:layout_constraintTop_toTopOf="@+id/gravity"
+            tools:text="1 standard" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/gravity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/planet_gravity"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@+id/climate"
+            app:layout_constraintBottom_toTopOf="@id/terrain"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/climateDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/terrainDetails"
+            app:layout_constraintTop_toTopOf="@+id/climate"
+            tools:text="Arid" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/climate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/planet_climate"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/gravity"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@+id/diameter" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/diameterDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/terrainDetails"
+            app:layout_constraintTop_toTopOf="@+id/diameter"
+            tools:text="10465" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/diameter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/planet_diameter"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/climate"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@id/orbitalPeriod" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/orbitalPeriodDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/terrainDetails"
+            app:layout_constraintTop_toTopOf="@id/orbitalPeriod"
+            tools:text="304" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/orbitalPeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/planet_orbital_period"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/diameter"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@id/planetRotation"
+            app:layout_constraintVertical_bias="0.973"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/rotationDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/terrainDetails"
+            app:layout_constraintTop_toTopOf="@id/planetRotation"
+            tools:text="23" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/planetRotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/planet_rotation_period"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/orbitalPeriod"
+            app:layout_constraintStart_toStartOf="@+id/surfaceWater"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalGuideline"
+            app:layout_constraintVertical_bias="0.973"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/planetImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalGuideline"
+            app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/verticalStartGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/planetNameDetails"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@drawable/planet_error_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/planetNameDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:padding="24dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tatooine" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/verticalStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

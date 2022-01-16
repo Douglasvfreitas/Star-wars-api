@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/filmContentCv"
         android:layout_width="match_parent"
@@ -17,38 +18,22 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/filmIv"
+            android:id="@+id/characterIv"
             android:layout_width="155dp"
             android:layout_height="216dp"
             android:layout_gravity="center_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/episode1" />
+            tools:srcCompat="@drawable/luke_skywalker" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/episodeTv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            tools:text="Episode I: "
-            tools:textColor="@color/black"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filmIv"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/titleTv"
+            android:id="@+id/characterNameTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="8dp"
-            tools:text=" The Phantom Menace"
+            tools:text="Luke Skywalker"
             tools:textColor= "@color/black"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -57,7 +42,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/episodeTv"
+            app:layout_constraintTop_toBottomOf="@+id/characterIv"
             app:layout_constraintVertical_bias="0.0" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

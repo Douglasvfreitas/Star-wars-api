@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/filmContentCv"
+        android:id="@+id/planetContentCv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -17,47 +17,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/filmIv"
+            android:id="@+id/planetIv"
             android:layout_width="155dp"
             android:layout_height="216dp"
             android:layout_gravity="center_horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/episode1" />
+            tools:srcCompat="@drawable/luke_skywalker" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/episodeTv"
+            android:id="@+id/planetNameTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            tools:text="Episode I: "
-            tools:textColor="@color/black"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filmIv"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/titleTv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:padding="8dp"
-            tools:text=" The Phantom Menace"
-            tools:textColor= "@color/black"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/episodeTv"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/planetIv"
+            tools:text="Luke Skywalker"
+            tools:textColor="@color/black" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
