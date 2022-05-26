@@ -11,7 +11,7 @@ data class Character(
     val eyeColor: String,
     val birthYear: String,
     val gender: String,
-    val homeworld: String,
+    val homeWorld: String,
     val urlImage: String,
     val id: String
 ) : Serializable

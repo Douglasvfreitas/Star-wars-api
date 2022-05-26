@@ -22,4 +22,7 @@ interface StarWarsGateway {
 
     @GET("planets")
     fun listPlanet(): Observable<PlanetsResponse>
+
+    @GET("people")
+    suspend fun listCharacters(): CharactersResponse
 }

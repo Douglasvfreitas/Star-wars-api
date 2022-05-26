@@ -27,14 +27,17 @@
             android:theme="@style/Theme.StarWars.NoActionBar"/>
         <activity android:name="com.example.starwars.screens.film.FilmsActivity"/>
 
-        <activity android:name="com.example.starwars.screens.character.CharactersActivity"
+        <activity android:name="feature.characters.presentation.CharactersActivity"
             android:theme="@style/Theme.StarWars.NoActionBar">
         </activity>
 
-        <activity android:name="com.example.starwars.screens.character.CharactersDetailsActivity"
+        <activity android:name="feature.characters.presentation.steps.CharactersDetailsActivity"
             android:theme="@style/Theme.StarWars.NoActionBar"/>
 
         <activity android:name="com.example.starwars.screens.planet.PlanetsActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
+
+        <activity android:name="com.example.starwars.screens.planet.PlanetsDetailsActivity"
             android:theme="@style/Theme.StarWars.NoActionBar"/>
     </application>
 

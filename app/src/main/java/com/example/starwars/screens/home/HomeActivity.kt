@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
-import com.example.starwars.screens.character.CharactersActivity
+import feature.characters.presentation.CharactersActivity
 import com.example.starwars.screens.film.FilmsActivity
 import com.example.starwars.screens.planet.PlanetsActivity
 import kotlinx.android.synthetic.main.activity_home.*
@@ -25,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun moveToCharacterList() {
-        startActivity(Intent(this, CharactersActivity::class.java))
+        startActivity(Intent(baseContext,CharactersActivity::class.java))
     }
 
     private fun moveToPlanetsList(){

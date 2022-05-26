@@ -12,7 +12,6 @@ import com.example.starwars.infra.models.planet.PlanetsPresentation
 import com.example.starwars.models.Planet
 import com.example.starwars.models.ScreenState
 import com.example.starwars.params.Params
-import com.example.starwars.screens.character.CharactersDetailsActivity
 import kotlinx.android.synthetic.main.activity_films.*
 
 class PlanetsActivity : AppCompatActivity() {
@@ -33,8 +32,8 @@ class PlanetsActivity : AppCompatActivity() {
         }
     }
 
-    fun handleStates() {
-        viewModel.getScreenStatePlanet().observe(this, Observer { screenState ->
+    private fun handleStates() {
+        viewModel.getScreenStatePlanet().observe(this, { screenState ->
             when (screenState) {
                 is ScreenState.Error -> handleError()
                 is ScreenState.Loading -> handleLoading(true)
@@ -68,7 +67,7 @@ class PlanetsActivity : AppCompatActivity() {
     }
 
     private fun moveToPlanetDetails(planets: Planet) {
-        startActivity(Intent(this, CharactersDetailsActivity::class.java).apply {
+        startActivity(Intent(this, PlanetsDetailsActivity::class.java).apply {
             putExtra(Params.PLANET_FILM, planets)
         })
     }

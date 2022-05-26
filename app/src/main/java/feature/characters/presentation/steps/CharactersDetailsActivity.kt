@@ -1,4 +1,4 @@
-package com.example.starwars.screens.character
+package feature.characters.presentation.steps
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

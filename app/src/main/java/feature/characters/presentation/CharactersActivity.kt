@@ -1,4 +1,4 @@
-package com.example.starwars.screens.character
+package feature.characters.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,13 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
 import com.example.starwars.R
 import com.example.starwars.infra.models.character.CharactersPresentation
 import com.example.starwars.models.Character
 import com.example.starwars.models.ScreenState
 import com.example.starwars.params.Params
+import feature.characters.presentation.models.CharacterAdapter
+import feature.characters.presentation.steps.CharactersDetailsActivity
 import kotlinx.android.synthetic.main.activity_films.*
 
 class CharactersActivity : AppCompatActivity() {
@@ -33,7 +34,7 @@ class CharactersActivity : AppCompatActivity() {
     }
 
     private fun handleScreenStates() {
-        viewModel.getScreenStateCharacter().observe(this, Observer { screenState ->
+        viewModel.getScreenStateCharacter().observe(this, { screenState ->
             when (screenState) {
                 is ScreenState.Error -> handleError()
                 is ScreenState.Loading -> handleLoading(true)
@@ -51,7 +52,8 @@ class CharactersActivity : AppCompatActivity() {
     private fun handleResult(presentation: CharactersPresentation) {
         handleLoading(false)
         filmsRv.adapter = CharacterAdapter(
-            characters = presentation.characters, navigateToDetailsCharacters = { character: Character ->
+            characters = presentation.characters,
+            navigateToDetailsCharacters = { character: Character ->
                 moveToCharacterDetails(character)
             })
     }

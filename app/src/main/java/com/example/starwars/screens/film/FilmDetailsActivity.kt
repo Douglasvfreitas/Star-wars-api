@@ -22,21 +22,12 @@ class FilmDetailsActivity : AppCompatActivity() {
         val film = intent.extras?.getSerializable(Params.FILM_FILM) as? Film
 
         film?.let {
-            setImage(film.url)
-            //filmImageDet.setImageResource(film.retrieveEpisodeImage())
+            filmImageDet.setImageResource(film.retrieveEpisodeImage())
             filmTitleTv.text = getFilmTitle(film)
             filmOpening.text = film.openingCrawl
             directorFilm.text = film.director
             producerFilm.text = film.producer
         }
-    }
-
-    private fun setImage(urlImage: String) {
-        Picasso
-            .get()
-            .load(urlImage)
-            .error(R.drawable.episode1)
-            .into(characterImage)
     }
 
     private fun getFilmTitle(film: Film): String {

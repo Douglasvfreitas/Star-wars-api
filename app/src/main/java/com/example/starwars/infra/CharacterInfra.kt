@@ -4,8 +4,10 @@ import com.example.starwars.infra.models.character.CharactersPresentation
 import com.example.starwars.models.Character
 import com.example.starwars.models.services.CharacterService
 import io.reactivex.Observable
+import kotlinx.serialization.ExperimentalSerializationApi
 
-class CharacterInfra : CharacterService {
+internal class CharacterInfra : CharacterService {
+    @OptIn(ExperimentalSerializationApi::class)
     private val api = RetrofitClient.createService(StarWarsGateway::class.java)
 
     override fun listCharacters(): Observable<CharactersPresentation> {
@@ -25,7 +27,7 @@ class CharacterInfra : CharacterService {
                         eyeColor = characterResponse.eyeColor,
                         birthYear = characterResponse.birthYear,
                         gender = characterResponse.gender,
-                        homeworld = characterResponse.homeworld,
+                        homeWorld = characterResponse.homeworld,
                         urlImage = retrievePeopleImage(id),
                         id = id
                     )

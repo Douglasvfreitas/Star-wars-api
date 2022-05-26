@@ -1,4 +1,4 @@
-package com.example.starwars.screens.character
+package feature.characters.presentation.models
 
 import android.view.LayoutInflater
 import android.view.View

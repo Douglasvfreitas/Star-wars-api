@@ -1,4 +1,4 @@
-package com.example.starwars.screens.character
+package feature.characters.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
