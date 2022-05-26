@@ -6,7 +6,6 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
 import com.example.starwars.R
 import com.example.starwars.infra.models.planet.PlanetsPresentation
 import com.example.starwars.models.Planet
@@ -33,13 +32,13 @@ class PlanetsActivity : AppCompatActivity() {
     }
 
     private fun handleStates() {
-        viewModel.getScreenStatePlanet().observe(this, { screenState ->
+        viewModel.getScreenStatePlanet().observe(this) { screenState ->
             when (screenState) {
                 is ScreenState.Error -> handleError()
                 is ScreenState.Loading -> handleLoading(true)
                 is ScreenState.Result -> handleResult(screenState.value)
             }
-        })
+        }
     }
 
     private fun handleLoading(isLoading: Boolean) {

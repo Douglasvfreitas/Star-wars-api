@@ -1,41 +1,20 @@
 package feature.characters.presentation
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.starwars.infra.CharacterInfra
 import com.example.starwars.infra.models.character.CharactersPresentation
-import com.example.starwars.models.ScreenState
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.plusAssign
-import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
+import feature.characters.data.CharactersInfra
+import feature.utils.StateMachine
+import feature.utils.stateMachineFunction
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 
 internal class CharactersViewModel : ViewModel() {
 
-    private val service = CharacterInfra()
-    private val disposer = CompositeDisposable()
-    private val mutableCharacterState = MutableLiveData<ScreenState<CharactersPresentation>>()
-    fun getScreenStateCharacter() = mutableCharacterState as LiveData<ScreenState<CharactersPresentation>>
+    private val service = CharactersInfra()
+    private val dispatcher = Dispatchers.Default
 
-    override fun onCleared() {
-        super.onCleared()
-        disposer.clear()
-    }
-
-    fun retrievePresentation() {
-        mutableCharacterState.value = ScreenState.Loading
-        disposer += service.listCharacters()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onNext = { character ->
-                    mutableCharacterState.value = ScreenState.Result(character)
-                },
-                onError = { error ->
-                    mutableCharacterState.value = ScreenState.Error(error)
-                }
-            )
-    }
+    fun retrievePresentation(): Flow<StateMachine<CharactersPresentation>> =
+        stateMachineFunction(dispatcher) {
+            service.listCharacters()
+        }
 }

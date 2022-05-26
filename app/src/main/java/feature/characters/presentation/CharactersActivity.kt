@@ -6,13 +6,15 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.lifecycle.coroutineScope
 import com.example.starwars.R
 import com.example.starwars.infra.models.character.CharactersPresentation
 import com.example.starwars.models.Character
-import com.example.starwars.models.ScreenState
 import com.example.starwars.params.Params
 import feature.characters.presentation.models.CharacterAdapter
 import feature.characters.presentation.steps.CharactersDetailsActivity
+import feature.utils.StateMachine
+import feature.utils.collectIn
 import kotlinx.android.synthetic.main.activity_films.*
 
 class CharactersActivity : AppCompatActivity() {
@@ -34,13 +36,14 @@ class CharactersActivity : AppCompatActivity() {
     }
 
     private fun handleScreenStates() {
-        viewModel.getScreenStateCharacter().observe(this, { screenState ->
-            when (screenState) {
-                is ScreenState.Error -> handleError()
-                is ScreenState.Loading -> handleLoading(true)
-                is ScreenState.Result -> handleResult(screenState.value)
+        viewModel.retrievePresentation().collectIn(lifecycle.coroutineScope) { event ->
+            when (event) {
+                StateMachine.Start -> handleLoading(true)
+                is StateMachine.Success -> handleResult(event.value)
+                is StateMachine.Failure -> handleError()
+                StateMachine.Finish -> handleLoading(false)
             }
-        })
+        }
     }
 
     private fun handleLoading(isLoading: Boolean) {
