@@ -1,4 +1,4 @@
-package com.example.starwars.infra.models.character
+package feature.character.data.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

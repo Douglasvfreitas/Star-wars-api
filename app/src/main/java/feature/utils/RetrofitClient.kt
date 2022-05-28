@@ -1,6 +1,5 @@
-package com.example.starwars.infra
+package feature.utils
 
-import com.example.starwars.infra.helpers.Json
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.ExperimentalSerializationApi
 import okhttp3.MediaType.Companion.toMediaTypeOrNull

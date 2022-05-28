@@ -1,4 +1,4 @@
-package com.example.starwars.screens.character
+package feature.character.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.example.starwars.R
-import com.example.starwars.infra.models.character.CharactersPresentation
-import com.example.starwars.models.Character
+import feature.character.domain.models.CharactersPresentation
+import feature.character.domain.models.Character
 import com.example.starwars.models.ScreenState
-import com.example.starwars.params.Params
+import feature.Params
+import feature.character.presentation.adapter.CharacterAdapter
 import kotlinx.android.synthetic.main.activity_films.*
 
 class CharactersActivity : AppCompatActivity() {

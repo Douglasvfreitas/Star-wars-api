@@ -1,9 +1,9 @@
-package com.example.starwars.infra
+package feature
 
 
 import com.example.starwars.infra.models.film.FilmDetailsResponse
 import com.example.starwars.infra.models.film.FilmsResponse
-import com.example.starwars.infra.models.character.CharactersResponse
+import feature.character.data.models.CharactersResponse
 import com.example.starwars.infra.models.planet.PlanetsResponse
 import io.reactivex.Observable
 import retrofit2.http.GET

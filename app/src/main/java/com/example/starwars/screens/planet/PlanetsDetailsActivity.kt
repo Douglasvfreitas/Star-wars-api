@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
 import com.example.starwars.models.Planet
-import com.example.starwars.params.Params
+import feature.Params
 
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_planet_details.*

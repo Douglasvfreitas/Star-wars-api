@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import com.example.starwars.R
 import com.example.starwars.models.Film
 import com.example.starwars.models.ScreenState
-import com.example.starwars.params.Params
+import feature.Params
 import kotlinx.android.synthetic.main.activity_films.*
 
 class FilmsActivity : AppCompatActivity() {

@@ -1,10 +1,10 @@
-package com.example.starwars.screens.character
+package feature.character.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.starwars.infra.CharacterInfra
-import com.example.starwars.infra.models.character.CharactersPresentation
+import feature.character.data.CharacterInfra
+import feature.character.domain.models.CharactersPresentation
 import com.example.starwars.models.ScreenState
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
