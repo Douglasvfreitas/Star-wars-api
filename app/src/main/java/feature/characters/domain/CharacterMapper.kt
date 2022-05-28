@@ -1,8 +1,10 @@
 package feature.characters.domain
 
-import com.example.starwars.infra.models.character.CharactersPresentation
-import com.example.starwars.infra.models.character.CharactersResponse
-import com.example.starwars.models.Character
+import feature.characters.presentation.models.CharactersPresentation
+import feature.characters.data.models.CharactersResponse
+import feature.characters.domain.models.Character
+import feature.utils.retrieveIdForImage
+import feature.utils.retrieveImageByUrl
 
 internal object CharacterMapper {
 
@@ -12,7 +14,7 @@ internal object CharacterMapper {
             next = response.next,
             previous = response.previous,
             characters = response.result.map { characterResponse ->
-                val id: String = retrieveCharacterId(characterResponse.url)
+                val id: String = retrieveIdForImage(characterResponse.url)
                 Character(
                     name = characterResponse.name,
                     height = characterResponse.height,
@@ -22,16 +24,12 @@ internal object CharacterMapper {
                     eyeColor = characterResponse.eyeColor,
                     birthYear = characterResponse.birthYear,
                     gender = characterResponse.gender,
-                    homeWorld = characterResponse.homeworld,
-                    urlImage = retrievePeopleImage(id),
+                    homeWorld = characterResponse.homeWorld,
+                    urlImage = retrieveImageByUrl(id,TYPE_RESPONSE),
                     id = id
                 )
             }
         )
-}
 
-private fun retrieveCharacterId(url: String): String = url.filter { it.isDigit() }
-
-private fun retrievePeopleImage(id: String): String {
-    return "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
+    private const val TYPE_RESPONSE = "characters"
 }

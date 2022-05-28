@@ -1,6 +1,6 @@
-package com.example.starwars.infra.models.character
+package feature.characters.presentation.models
 
-import com.example.starwars.models.Character
+import feature.characters.domain.models.Character
 
 data class CharactersPresentation(
     val characters: List<Character>,

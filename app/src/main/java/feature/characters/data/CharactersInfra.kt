@@ -1,7 +1,7 @@
 package feature.characters.data
 
 import com.example.starwars.infra.RetrofitClient
-import com.example.starwars.infra.models.character.CharactersPresentation
+import feature.characters.presentation.models.CharactersPresentation
 import feature.characters.domain.CharacterMapper
 import kotlinx.serialization.ExperimentalSerializationApi
 

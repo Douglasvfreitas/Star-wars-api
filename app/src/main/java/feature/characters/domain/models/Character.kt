@@ -1,4 +1,4 @@
-package com.example.starwars.models
+package feature.characters.domain.models
 
 import java.io.Serializable
 

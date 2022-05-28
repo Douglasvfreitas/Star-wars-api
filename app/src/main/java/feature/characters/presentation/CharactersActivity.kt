@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.coroutineScope
 import com.example.starwars.R
-import com.example.starwars.infra.models.character.CharactersPresentation
-import com.example.starwars.models.Character
+import feature.characters.presentation.models.CharactersPresentation
+import feature.characters.domain.models.Character
 import com.example.starwars.params.Params
 import feature.characters.presentation.models.CharacterAdapter
 import feature.characters.presentation.steps.CharactersDetailsActivity

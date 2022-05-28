@@ -1,7 +1,7 @@
 package feature.characters.presentation
 
 import androidx.lifecycle.ViewModel
-import com.example.starwars.infra.models.character.CharactersPresentation
+import feature.characters.presentation.models.CharactersPresentation
 import feature.characters.data.CharactersInfra
 import feature.utils.StateMachine
 import feature.utils.stateMachineFunction

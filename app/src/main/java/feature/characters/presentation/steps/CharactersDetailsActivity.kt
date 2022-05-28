@@ -3,7 +3,7 @@ package feature.characters.presentation.steps
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
-import com.example.starwars.models.Character
+import feature.characters.domain.models.Character
 import com.example.starwars.params.Params
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_character_details.*
