@@ -1,21 +1,22 @@
-package com.example.starwars.infra
+package feature.character.domain
 
-import com.example.starwars.infra.models.character.CharactersPresentation
-import com.example.starwars.models.Character
-import com.example.starwars.models.services.CharacterService
+import feature.utils.RetrofitClient
+import feature.StarWarsGateway
+import feature.character.domain.models.CharactersPresentation
+import feature.character.domain.models.Character
 import io.reactivex.Observable
 
-class CharacterInfra : CharacterService {
+internal object CharacterMapper {
     private val api = RetrofitClient.createService(StarWarsGateway::class.java)
 
-    override fun listCharacters(): Observable<CharactersPresentation> {
+    fun characterToDomain(): Observable<CharactersPresentation> {
         return api.listPeople().map { charactersResponse ->
             CharactersPresentation(
                 count = charactersResponse.count,
                 next = charactersResponse.next,
                 previous = charactersResponse.previous,
                 characters = charactersResponse.result.map { characterResponse ->
-                    val id = retrieveCharacterId(characterResponse.url)
+                    val id: String = retrieveCharacterId(characterResponse.url)
                     Character(
                         name = characterResponse.name,
                         height = characterResponse.height,
@@ -32,13 +33,12 @@ class CharacterInfra : CharacterService {
                 }
             )
         }
+
     }
+}
 
+private fun retrieveCharacterId(url: String): String = url.filter { it.isDigit() }
 
-    private fun retrieveCharacterId(url: String): String = url.filter { it.isDigit() }
-
-    private fun retrievePeopleImage(id: String): String {
-        return "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
-    }
-
+private fun retrievePeopleImage(id: String): String {
+    return "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
 }

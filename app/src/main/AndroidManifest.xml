@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.starwars">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,8 +14,9 @@
         android:roundIcon="@drawable/ic_star_wars_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.StarWars"
-        android:usesCleartextTraffic="true">
-        <activity android:name="com.example.starwars.screens.home.HomeActivity"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name="feature.HomeActivity"
             android:theme="@style/Theme.StarWars.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,11 +29,11 @@
             android:theme="@style/Theme.StarWars.NoActionBar"/>
         <activity android:name="com.example.starwars.screens.film.FilmsActivity"/>
 
-        <activity android:name="com.example.starwars.screens.character.CharactersActivity"
+        <activity android:name="feature.character.presentation.CharactersActivity"
             android:theme="@style/Theme.StarWars.NoActionBar">
         </activity>
 
-        <activity android:name="com.example.starwars.screens.character.CharactersDetailsActivity"
+        <activity android:name="feature.character.presentation.CharactersDetailsActivity"
             android:theme="@style/Theme.StarWars.NoActionBar"/>
 
         <activity android:name="com.example.starwars.screens.planet.PlanetsActivity"

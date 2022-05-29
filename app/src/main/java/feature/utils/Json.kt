@@ -1,4 +1,4 @@
-package com.example.starwars.infra.helpers
+package feature.utils
 
 import kotlinx.serialization.json.Json
 

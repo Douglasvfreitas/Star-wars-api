@@ -1,6 +1,6 @@
-package com.example.starwars.models.services
+package feature.character.domain
 
-import com.example.starwars.infra.models.character.CharactersPresentation
+import feature.character.domain.models.CharactersPresentation
 import io.reactivex.Observable
 
 interface CharacterService {

@@ -1,11 +1,11 @@
-package com.example.starwars.screens.character
+package feature.character.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.starwars.R
-import com.example.starwars.models.Character
+import feature.character.domain.models.Character
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.character_item.view.*
 

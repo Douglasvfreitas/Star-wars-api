@@ -1,4 +1,4 @@
-package com.example.starwars.params
+package feature
 
 
 object Params{

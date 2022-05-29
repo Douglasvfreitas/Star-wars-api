@@ -3,6 +3,8 @@ package com.example.starwars.infra
 import com.example.starwars.infra.models.planet.PlanetsPresentation
 import com.example.starwars.models.Planet
 import com.example.starwars.models.services.PlanetService
+import feature.StarWarsGateway
+import feature.utils.RetrofitClient
 import io.reactivex.Observable
 
 class PlanetInfra : PlanetService {

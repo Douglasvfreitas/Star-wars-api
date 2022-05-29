@@ -11,8 +11,8 @@ import com.example.starwars.R
 import com.example.starwars.infra.models.planet.PlanetsPresentation
 import com.example.starwars.models.Planet
 import com.example.starwars.models.ScreenState
-import com.example.starwars.params.Params
-import com.example.starwars.screens.character.CharactersDetailsActivity
+import feature.Params
+import feature.character.presentation.CharactersDetailsActivity
 import kotlinx.android.synthetic.main.activity_films.*
 
 class PlanetsActivity : AppCompatActivity() {

@@ -1,10 +1,10 @@
-package com.example.starwars.screens.character
+package feature.character.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
-import com.example.starwars.models.Character
-import com.example.starwars.params.Params
+import feature.character.domain.models.Character
+import feature.Params
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_character_details.*
 

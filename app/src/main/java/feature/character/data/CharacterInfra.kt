@@ -1,22 +1,23 @@
-package com.example.starwars.infra.mappers
+package feature.character.data
 
-import com.example.starwars.infra.RetrofitClient
-import com.example.starwars.infra.StarWarsGateway
-import com.example.starwars.infra.models.character.CharactersPresentation
-import com.example.starwars.models.Character
+import feature.utils.RetrofitClient
+import feature.character.domain.models.Character
+import feature.StarWarsGateway
+import feature.character.domain.CharacterService
+import feature.character.domain.models.CharactersPresentation
 import io.reactivex.Observable
 
-internal object CharacterMapper {
+class CharacterInfra : CharacterService {
     private val api = RetrofitClient.createService(StarWarsGateway::class.java)
 
-    fun characterToDomain(): Observable<CharactersPresentation> {
+    override fun listCharacters(): Observable<CharactersPresentation> {
         return api.listPeople().map { charactersResponse ->
             CharactersPresentation(
                 count = charactersResponse.count,
                 next = charactersResponse.next,
                 previous = charactersResponse.previous,
                 characters = charactersResponse.result.map { characterResponse ->
-                    val id: String = retrieveCharacterId(characterResponse.url)
+                    val id = retrieveCharacterId(characterResponse.url)
                     Character(
                         name = characterResponse.name,
                         height = characterResponse.height,
@@ -33,12 +34,13 @@ internal object CharacterMapper {
                 }
             )
         }
-
     }
-}
 
-private fun retrieveCharacterId(url: String): String = url.filter { it.isDigit() }
 
-private fun retrievePeopleImage(id: String): String {
-    return "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
+    private fun retrieveCharacterId(url: String): String = url.filter { it.isDigit() }
+
+    private fun retrievePeopleImage(id: String): String {
+        return "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
+    }
+
 }
