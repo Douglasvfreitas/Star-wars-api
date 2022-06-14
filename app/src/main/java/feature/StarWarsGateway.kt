@@ -1,8 +1,8 @@
 package feature
 
 
-import com.example.starwars.infra.models.film.FilmDetailsResponse
-import com.example.starwars.infra.models.film.FilmsResponse
+import feature.film.data.models.FilmDetailsResponse
+import feature.film.data.models.FilmsResponse
 import feature.character.data.models.CharactersResponse
 import com.example.starwars.infra.models.planet.PlanetsResponse
 import io.reactivex.Observable

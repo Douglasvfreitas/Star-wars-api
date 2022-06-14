@@ -1,4 +1,4 @@
-package com.example.starwars.models
+package feature.film.domain.models
 
 import com.example.starwars.R
 import java.io.Serializable

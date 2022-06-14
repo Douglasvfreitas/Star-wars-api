@@ -1,7 +1,7 @@
-package com.example.starwars.infra
+package feature.film.data
 
-import com.example.starwars.models.Film
-import com.example.starwars.models.services.FilmsService
+import feature.film.domain.models.Film
+import feature.film.domain.FilmsService
 import feature.StarWarsGateway
 import feature.utils.RetrofitClient
 import io.reactivex.Observable

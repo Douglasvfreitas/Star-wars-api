@@ -1,6 +1,6 @@
-package com.example.starwars.models.services
+package feature.film.domain
 
-import com.example.starwars.models.Film
+import feature.film.domain.models.Film
 import io.reactivex.Observable
 
 interface FilmsService {

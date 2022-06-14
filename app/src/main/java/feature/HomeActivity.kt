@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
 import feature.character.presentation.CharactersActivity
-import com.example.starwars.screens.film.FilmsActivity
+import feature.film.presentation.FilmsActivity
 import com.example.starwars.screens.planet.PlanetsActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
