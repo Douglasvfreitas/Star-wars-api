@@ -1,9 +1,9 @@
-package com.example.starwars.screens.planet
+package feature.planet.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
-import com.example.starwars.models.Planet
+import feature.planet.domain.models.Planet
 import feature.Params
 
 import com.squareup.picasso.Picasso

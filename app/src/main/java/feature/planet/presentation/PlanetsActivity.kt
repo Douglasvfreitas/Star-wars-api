@@ -1,4 +1,4 @@
-package com.example.starwars.screens.planet
+package feature.planet.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.example.starwars.R
-import com.example.starwars.infra.models.planet.PlanetsPresentation
-import com.example.starwars.models.Planet
-import com.example.starwars.models.ScreenState
+import feature.planet.domain.models.PlanetsPresentation
+import feature.planet.domain.models.Planet
+import feature.utils.ScreenState
+import feature.planet.presentation.adapter.PlanetAdapter
 import feature.Params
 import feature.character.presentation.CharactersDetailsActivity
 import kotlinx.android.synthetic.main.activity_films.*

@@ -4,7 +4,7 @@ package feature
 import feature.film.data.models.FilmDetailsResponse
 import feature.film.data.models.FilmsResponse
 import feature.character.data.models.CharactersResponse
-import com.example.starwars.infra.models.planet.PlanetsResponse
+import feature.planet.data.models.PlanetsResponse
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path

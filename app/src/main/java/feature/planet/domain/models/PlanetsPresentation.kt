@@ -1,6 +1,4 @@
-package com.example.starwars.infra.models.planet
-
-import com.example.starwars.models.Planet
+package feature.planet.domain.models
 
 data class PlanetsPresentation(
     val count: Int,

@@ -1,6 +1,4 @@
-package com.example.starwars.models
-
-
+package feature.utils
 
 sealed class ScreenState<out T> {
     object Loading : ScreenState<Nothing>()

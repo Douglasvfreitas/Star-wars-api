@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import com.example.starwars.R
 import feature.character.domain.models.CharactersPresentation
 import feature.character.domain.models.Character
-import com.example.starwars.models.ScreenState
+import feature.utils.ScreenState
 import feature.Params
 import feature.character.presentation.adapter.CharacterAdapter
 import kotlinx.android.synthetic.main.activity_films.*

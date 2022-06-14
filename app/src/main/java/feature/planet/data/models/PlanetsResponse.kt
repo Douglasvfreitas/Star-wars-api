@@ -1,10 +1,10 @@
-package com.example.starwars.infra.models.planet
+package feature.planet.data.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class PlanetsResponse (
+data class PlanetsResponse(
     @SerialName("count") val count: Int,
     @SerialName("next") val next: String,
     @SerialName("previous") val previous: String? = null,

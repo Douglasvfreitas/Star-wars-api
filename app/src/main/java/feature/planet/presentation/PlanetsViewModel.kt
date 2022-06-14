@@ -1,11 +1,11 @@
-package com.example.starwars.screens.planet
+package feature.planet.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.starwars.infra.PlanetInfra
-import com.example.starwars.infra.models.planet.PlanetsPresentation
-import com.example.starwars.models.ScreenState
+import feature.planet.data.PlanetInfra
+import feature.planet.domain.models.PlanetsPresentation
+import feature.utils.ScreenState
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
