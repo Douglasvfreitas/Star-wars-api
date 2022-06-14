@@ -15,27 +15,11 @@ import io.reactivex.schedulers.Schedulers
 internal class CharactersViewModel : ViewModel() {
 
     private val service = CharacterInfra()
-    private val disposer = CompositeDisposable()
     private val mutableCharacterState = MutableLiveData<ScreenState<CharactersPresentation>>()
     fun getScreenStateCharacter() = mutableCharacterState as LiveData<ScreenState<CharactersPresentation>>
 
-    override fun onCleared() {
-        super.onCleared()
-        disposer.clear()
-    }
-
-    fun retrievePresentation() {
-        mutableCharacterState.value = ScreenState.Loading
-        disposer += service.listCharacters()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onNext = { character ->
-                    mutableCharacterState.value = ScreenState.Result(character)
-                },
-                onError = { error ->
-                    mutableCharacterState.value = ScreenState.Error(error)
-                }
-            )
+    suspend fun retrievePresentation() {
+        // TODO implement state machine here
+        service.listCharacter()
     }
 }

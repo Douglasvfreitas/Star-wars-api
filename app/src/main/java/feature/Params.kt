@@ -6,3 +6,8 @@ object Params{
     const val CHARACTER_FILM = "character.info"
     const val PLANET_FILM = "planet.info"
 }
+
+object ImageTypeResponse {
+    const val CHARACTER_TYPE = "characters"
+
+}

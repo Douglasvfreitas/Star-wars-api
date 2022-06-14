@@ -1,44 +1,39 @@
 package feature.character.domain
 
-import feature.utils.RetrofitClient
-import feature.StarWarsGateway
-import feature.character.domain.models.CharactersPresentation
+import feature.ImageTypeResponse
+import feature.character.data.models.CharacterDetailsResponse
+import feature.character.data.models.CharactersResponse
 import feature.character.domain.models.Character
-import io.reactivex.Observable
+import feature.character.domain.models.CharactersPresentation
+import feature.utils.retrieveIdForImage
+import feature.utils.retrieveImageById
 
 internal object CharacterMapper {
-    private val api = RetrofitClient.createService(StarWarsGateway::class.java)
 
-    fun characterToDomain(): Observable<CharactersPresentation> {
-        return api.listPeople().map { charactersResponse ->
-            CharactersPresentation(
-                count = charactersResponse.count,
-                next = charactersResponse.next,
-                previous = charactersResponse.previous,
-                characters = charactersResponse.result.map { characterResponse ->
-                    val id: String = retrieveCharacterId(characterResponse.url)
-                    Character(
-                        name = characterResponse.name,
-                        height = characterResponse.height,
-                        mass = characterResponse.mass,
-                        hairColor = characterResponse.hairColor,
-                        skinColor = characterResponse.skinColor,
-                        eyeColor = characterResponse.eyeColor,
-                        birthYear = characterResponse.birthYear,
-                        gender = characterResponse.gender,
-                        homeworld = characterResponse.homeworld,
-                        urlImage = retrievePeopleImage(id),
-                        id = id
-                    )
-                }
+    fun toDomain(response: CharactersResponse): CharactersPresentation =
+        CharactersPresentation(
+            count = response.count,
+            next = response.next,
+            previous = response.previous,
+            characters = getCharacter(response.result)
+        )
+
+    private fun getCharacter(detailsResponse: List<CharacterDetailsResponse>): List<Character> {
+        return detailsResponse.map { characterDetails ->
+            val characterId = retrieveIdForImage(characterDetails.url)
+            Character(
+                name = characterDetails.name,
+                height = characterDetails.height,
+                mass = characterDetails.mass,
+                hairColor = characterDetails.hairColor,
+                skinColor = characterDetails.skinColor,
+                eyeColor = characterDetails.eyeColor,
+                birthYear = characterDetails.birthYear,
+                gender = characterDetails.gender,
+                homeworld = characterDetails.homeWorld,
+                urlImage = retrieveImageById(characterId, ImageTypeResponse.CHARACTER_TYPE),
+                id = characterId
             )
         }
-
     }
-}
-
-private fun retrieveCharacterId(url: String): String = url.filter { it.isDigit() }
-
-private fun retrievePeopleImage(id: String): String {
-    return "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
 }
