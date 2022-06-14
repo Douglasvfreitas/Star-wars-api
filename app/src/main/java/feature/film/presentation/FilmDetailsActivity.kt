@@ -1,9 +1,9 @@
-package com.example.starwars.screens.film
+package feature.film.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
-import com.example.starwars.models.Film
+import feature.film.domain.models.Film
 import feature.Params
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_character_details.*

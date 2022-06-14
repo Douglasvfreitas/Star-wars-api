@@ -1,11 +1,11 @@
-package com.example.starwars.screens.film
+package feature.film.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.starwars.R
-import com.example.starwars.models.Film
+import feature.film.domain.models.Film
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.film_item.view.*
 
