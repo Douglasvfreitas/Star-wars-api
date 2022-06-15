@@ -5,9 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import feature.film.data.FilmsInfra
 import feature.film.domain.models.Film
-import com.example.starwars.models.ScreenState
-import com.example.starwars.infra.FilmsInfra
-import com.example.starwars.models.Film
 import feature.utils.ScreenState
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
