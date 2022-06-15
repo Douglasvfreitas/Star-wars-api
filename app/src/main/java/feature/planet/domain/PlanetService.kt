@@ -1,6 +1,6 @@
-package com.example.starwars.models.services
+package feature.planet.domain
 
-import com.example.starwars.infra.models.planet.PlanetsPresentation
+import feature.planet.domain.models.PlanetsPresentation
 import io.reactivex.Observable
 
 interface PlanetService {

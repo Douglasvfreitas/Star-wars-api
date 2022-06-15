@@ -17,7 +17,8 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity android:name="feature.HomeActivity"
-            android:theme="@style/Theme.StarWars.NoActionBar">
+            android:theme="@style/Theme.StarWars.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -36,7 +37,10 @@
         <activity android:name="feature.character.presentation.CharactersDetailsActivity"
             android:theme="@style/Theme.StarWars.NoActionBar"/>
 
-        <activity android:name="com.example.starwars.screens.planet.PlanetsActivity"
+        <activity android:name="feature.planet.presentation.PlanetsActivity"
+            android:theme="@style/Theme.StarWars.NoActionBar"/>
+
+        <activity android:name="feature.planet.presentation.PlanetsDetailsActivity"
             android:theme="@style/Theme.StarWars.NoActionBar"/>
     </application>
 

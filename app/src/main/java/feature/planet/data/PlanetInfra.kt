@@ -1,8 +1,8 @@
-package com.example.starwars.infra
+package feature.planet.data
 
-import com.example.starwars.infra.models.planet.PlanetsPresentation
-import com.example.starwars.models.Planet
-import com.example.starwars.models.services.PlanetService
+import feature.planet.domain.models.PlanetsPresentation
+import feature.planet.domain.models.Planet
+import feature.planet.domain.PlanetService
 import feature.StarWarsGateway
 import feature.utils.RetrofitClient
 import io.reactivex.Observable

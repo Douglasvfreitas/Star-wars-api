@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import feature.character.data.CharacterInfra
 import feature.character.domain.models.CharactersPresentation
-import com.example.starwars.models.ScreenState
+import feature.utils.ScreenState
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign

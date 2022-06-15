@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
 import feature.character.presentation.CharactersActivity
 import feature.film.presentation.FilmsActivity
-import com.example.starwars.screens.planet.PlanetsActivity
+import feature.planet.presentation.PlanetsActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
 
         filmsInformTv.setOnClickListener { moveToFilmsList() }
         characterInformTv.setOnClickListener { moveToCharacterList() }
-        planetInformTv.setOnClickListener{ moveToPlanetsList() }
+        planetInformTv.setOnClickListener { moveToPlanetsList() }
     }
 
     private fun moveToFilmsList() {
@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
         startActivity(Intent(this, CharactersActivity::class.java))
     }
 
-    private fun moveToPlanetsList(){
-        startActivity(Intent(this,PlanetsActivity::class.java))
+    private fun moveToPlanetsList() {
+        startActivity(Intent(this, PlanetsActivity::class.java))
     }
 }

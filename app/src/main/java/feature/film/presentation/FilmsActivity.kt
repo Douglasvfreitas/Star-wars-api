@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.example.starwars.R
-import feature.film.domain.models.Film
-import com.example.starwars.models.ScreenState
 import feature.Params
+import feature.film.domain.models.Film
 import feature.film.presentation.adapter.FilmsAdapter
+import feature.utils.ScreenState
 import kotlinx.android.synthetic.main.activity_films.*
 
 class FilmsActivity : AppCompatActivity() {
@@ -43,7 +43,7 @@ class FilmsActivity : AppCompatActivity() {
         retryButton.isVisible = false
     }
 
-    private fun listenButton(){
+    private fun listenButton() {
         retryButton.setOnClickListener {
             viewModel.retrieveMovies()
         }
@@ -59,7 +59,7 @@ class FilmsActivity : AppCompatActivity() {
 
     private fun handleError() {
         Toast.makeText(this, ERROR_MENSSAGE, Toast.LENGTH_LONG).apply {
-            setGravity(Gravity.CENTER,0,0)
+            setGravity(Gravity.CENTER, 0, 0)
             show()
         }
         handleLoading(false)

@@ -1,11 +1,11 @@
-package com.example.starwars.screens.planet
+package feature.planet.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.starwars.R
-import com.example.starwars.models.Planet
+import feature.planet.domain.models.Planet
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.planet_item.view.*
 
