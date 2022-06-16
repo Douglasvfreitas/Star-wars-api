@@ -5,14 +5,14 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class CharacterDetailsResponse (
-    @SerialName("name") var name: String = "",
-    @SerialName("height") var height: String = "",
-    @SerialName("mass") var mass: String = "",
-    @SerialName("hair_color") var hairColor: String = "",
-    @SerialName("skin_color") var skinColor: String = "",
-    @SerialName("eye_color") var eyeColor: String = "",
-    @SerialName("birth_year") var birthYear: String = "",
-    @SerialName("gender") var gender: String = "",
-    @SerialName("homeworld") var homeworld: String = "",
-    @SerialName("url") var url: String
+    @SerialName("name") val name: String = "",
+    @SerialName("height") val height: String = "",
+    @SerialName("mass") val mass: String = "",
+    @SerialName("hair_color") val hairColor: String = "",
+    @SerialName("skin_color") val skinColor: String = "",
+    @SerialName("eye_color") val eyeColor: String = "",
+    @SerialName("birth_year") val birthYear: String = "",
+    @SerialName("gender") val gender: String = "",
+    @SerialName("homeworld") val homeWorld: String = "",
+    @SerialName("url") val url: String
 )

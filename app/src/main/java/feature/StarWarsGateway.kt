@@ -18,7 +18,7 @@ interface StarWarsGateway {
     fun getMovie(@Path("id") id: Int) : Observable<FilmDetailsResponse>
 
     @GET("people")
-    fun listPeople(): Observable<CharactersResponse>
+    suspend fun getPeople(): CharactersResponse
 
     @GET("planets")
     fun listPlanet(): Observable<PlanetsResponse>
