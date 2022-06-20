@@ -6,13 +6,14 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.example.starwars.R
-import feature.character.domain.models.CharactersPresentation
-import feature.character.domain.models.Character
-import feature.utils.ScreenState
 import feature.Params
+import feature.character.domain.models.Character
+import feature.character.domain.models.CharactersPresentation
 import feature.character.presentation.adapter.CharacterAdapter
+import feature.utils.StateMachine
+import feature.utils.collectIn
 import kotlinx.android.synthetic.main.activity_films.*
 
 class CharactersActivity : AppCompatActivity() {
@@ -23,7 +24,6 @@ class CharactersActivity : AppCompatActivity() {
         setContentView(R.layout.activity_films)
 
         handleScreenStates()
-        viewModel.retrievePresentation()
         listenButton()
     }
 
@@ -34,13 +34,14 @@ class CharactersActivity : AppCompatActivity() {
     }
 
     private fun handleScreenStates() {
-        viewModel.getScreenStateCharacter().observe(this, Observer { screenState ->
-            when (screenState) {
-                is ScreenState.Error -> handleError()
-                is ScreenState.Loading -> handleLoading(true)
-                is ScreenState.Result -> handleResult(screenState.value)
+        viewModel.retrievePresentation().collectIn(lifecycleScope) { event ->
+            when (event) {
+                StateMachine.Start -> handleLoading(true)
+                is StateMachine.Success -> handleResult(event.value)
+                is StateMachine.Failure -> handleError()
+                StateMachine.Finish -> handleLoading(false)
             }
-        })
+        }
     }
 
     private fun handleLoading(isLoading: Boolean) {
@@ -52,7 +53,8 @@ class CharactersActivity : AppCompatActivity() {
     private fun handleResult(presentation: CharactersPresentation) {
         handleLoading(false)
         filmsRv.adapter = CharacterAdapter(
-            characters = presentation.characters, navigateToDetailsCharacters = { character: Character ->
+            characters = presentation.characters,
+            navigateToDetailsCharacters = { character: Character ->
                 moveToCharacterDetails(character)
             })
     }

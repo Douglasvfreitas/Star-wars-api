@@ -5,13 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.starwars.R
-import feature.planet.domain.models.Planet
 import com.squareup.picasso.Picasso
+import feature.planet.data.models.PlanetDetailsResponse
 import kotlinx.android.synthetic.main.planet_item.view.*
 
 class PlanetAdapter(
-    private val planets: List<Planet>,
-    val navigateToPlanetDetails: (Planet) -> Unit = {}
+    private val planets: List<PlanetDetailsResponse>,
+    val navigateToPlanetDetails: (PlanetDetailsResponse) -> Unit = {}
 ) :
     RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder>() {
 
@@ -30,11 +30,11 @@ class PlanetAdapter(
     override fun getItemCount(): Int = planets.size
 
     inner class PlanetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(planets: Planet) {
+        fun bind(planets: PlanetDetailsResponse) {
             itemView.planetNameTv.text = planets.name
             Picasso
                 .get()
-                .load(planets.urlImage)
+                .load(planets.url)
                 .error(R.drawable.planet_error_img)
                 .into(itemView.planetIv)
 
