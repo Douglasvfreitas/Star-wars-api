@@ -12,7 +12,7 @@ import retrofit2.http.Path
 interface StarWarsGateway {
 
     @GET("films")
-    fun listMovies(): Observable<FilmsResponse>
+    suspend fun listMovies(): FilmsResponse
 
     @GET("films/{id}")
     fun getMovie(@Path("id") id: Int): Observable<FilmDetailsResponse>

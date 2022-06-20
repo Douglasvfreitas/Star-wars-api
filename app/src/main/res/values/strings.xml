@@ -39,4 +39,13 @@
     <string name="planet_terrain">Terrain:</string>
     <string name="planet_population">Population:</string>
 
+    <string name="unknown_episode_title">Episode Unknown</string>
+    <string name="episode_one_title">Episode I</string>
+    <string name="episode_two_title">Episode II </string>
+    <string name="episode_tree_title">Episode III</string>
+    <string name="episode_four_title">Episode IV</string>
+    <string name="episode_five_title">Episode V</string>
+
+    <string name="empty">""</string>
+
 </resources>

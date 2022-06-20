@@ -26,13 +26,14 @@ class FilmsAdapter(private val films: List<Film>, val navigateToDetails: (Film) 
 
     inner class FilmsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(film: Film) {
+            val context = itemView.context
             itemView.titleTv.text = film.title
             Picasso
                 .get()
                 .load(film.url)
                 .error(R.drawable.episode1)
                 .into(itemView.filmIv)
-            itemView.episodeTv.text = film.retrieveEpisode()
+            itemView.episodeTv.text = context.getString(film.retrieveEpisode())
             itemView.setOnClickListener { navigateToDetails(film) }
         }
     }

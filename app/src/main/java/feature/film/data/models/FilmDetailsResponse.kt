@@ -5,18 +5,18 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class FilmDetailsResponse(
-        @SerialName("title") var title: String = "",
-        @SerialName("episode_id") var episodeId: Int,
-        @SerialName("opening_crawl") var openingCrawl: String = "",
-        @SerialName("director") var director: String = "",
-        @SerialName("producer") var producer: String = "",
-        @SerialName("release_date") var releaseDate: String = "",
-        @SerialName("characters") var characters: List<String>? = emptyList(),
-        @SerialName("planets") var planets: List<String>? = emptyList(),
-        @SerialName("starships") var starships: List<String>? = emptyList(),
-        @SerialName("vehicles") var vehicles: List<String>? = emptyList(),
-        @SerialName("species") var species: List<String>? = emptyList(),
-        @SerialName("created") var created: String = "",
-        @SerialName("edited") var edited: String = "",
-        @SerialName("url") var url: String = ""
+    @SerialName("title") val title: String = "",
+    @SerialName("episode_id") val episodeId: Int,
+    @SerialName("opening_crawl") val openingCrawl: String = "",
+    @SerialName("director") val director: String = "",
+    @SerialName("producer") val producer: String = "",
+    @SerialName("release_date") val releaseDate: String = "",
+    @SerialName("characters") val characters: List<String>? = emptyList(),
+    @SerialName("planets") val planets: List<String>? = emptyList(),
+    @SerialName("starships") val starships: List<String>? = emptyList(),
+    @SerialName("vehicles") val vehicles: List<String>? = emptyList(),
+    @SerialName("species") val species: List<String>? = emptyList(),
+    @SerialName("created") val created: String = "",
+    @SerialName("edited") val edited: String = "",
+    @SerialName("url") val url: String = ""
 )
