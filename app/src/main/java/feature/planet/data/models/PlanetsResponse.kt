@@ -8,5 +8,5 @@ data class PlanetsResponse(
     @SerialName("count") val count: Int,
     @SerialName("next") val next: String,
     @SerialName("previous") val previous: String? = null,
-    @SerialName("results") val results: ArrayList<PlanetDetailsResponse>
+    @SerialName("results") val results: List<PlanetDetailsResponse>
 )

@@ -15,4 +15,4 @@ data class PlanetDetailsResponse(
     @SerialName("surface_water") val water: String,
     @SerialName("population") val population: String,
     @SerialName("url") val url: String
-)
+):java.io.Serializable
