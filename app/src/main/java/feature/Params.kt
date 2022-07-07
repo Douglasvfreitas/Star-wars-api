@@ -9,5 +9,5 @@ object Params{
 
 object ImageTypeResponse {
     const val CHARACTER_TYPE = "characters"
-
+    const val PLANET_TYPE = "planets"
 }

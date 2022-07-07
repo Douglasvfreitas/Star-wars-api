@@ -6,14 +6,14 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.example.starwars.R
-import feature.planet.domain.models.PlanetsPresentation
-import feature.planet.domain.models.Planet
-import feature.utils.ScreenState
-import feature.planet.presentation.adapter.PlanetAdapter
 import feature.Params
-import feature.character.presentation.CharactersDetailsActivity
+import feature.planet.data.models.PlanetDetailsResponse
+import feature.planet.domain.models.PlanetsPresentation
+import feature.planet.presentation.adapter.PlanetAdapter
+import feature.utils.StateMachine
+import feature.utils.collectIn
 import kotlinx.android.synthetic.main.activity_films.*
 
 class PlanetsActivity : AppCompatActivity() {
@@ -24,24 +24,24 @@ class PlanetsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_films)
 
         handleStates()
-        viewModel.retrievePresentation()
         listenButton()
     }
 
     private fun listenButton() {
         retryButton.setOnClickListener {
-            viewModel.retrievePresentation()
+            handleStates()
         }
     }
 
-    fun handleStates() {
-        viewModel.getScreenStatePlanet().observe(this, Observer { screenState ->
-            when (screenState) {
-                is ScreenState.Error -> handleError()
-                is ScreenState.Loading -> handleLoading(true)
-                is ScreenState.Result -> handleResult(screenState.value)
+    private fun handleStates() {
+        viewModel.retrievePresentation().collectIn(lifecycleScope) { event ->
+            when (event) {
+                StateMachine.Start -> handleLoading(true)
+                is StateMachine.Success -> handleResult(event.value)
+                is StateMachine.Failure -> handleError()
+                StateMachine.Finish -> handleLoading(false)
             }
-        })
+        }
     }
 
     private fun handleLoading(isLoading: Boolean) {
@@ -53,14 +53,14 @@ class PlanetsActivity : AppCompatActivity() {
     private fun handleResult(presentation: PlanetsPresentation) {
         handleLoading(false)
         filmsRv.adapter = PlanetAdapter(
-            planets = presentation.planets, navigateToPlanetDetails = { planet: Planet ->
+            planets = presentation.planets, navigateToPlanetDetails = { planet ->
                 moveToPlanetDetails(planet)
             }
         )
     }
 
     private fun handleError() {
-        Toast.makeText(this, ERROR_MENSSAGE, Toast.LENGTH_LONG).apply {
+        Toast.makeText(this, ERROR_MESSAGE, Toast.LENGTH_LONG).apply {
             setGravity(Gravity.CENTER, 0, 0)
             show()
         }
@@ -68,13 +68,13 @@ class PlanetsActivity : AppCompatActivity() {
         retryButton.isVisible = true
     }
 
-    private fun moveToPlanetDetails(planets: Planet) {
-        startActivity(Intent(this, CharactersDetailsActivity::class.java).apply {
+    private fun moveToPlanetDetails(planets: PlanetDetailsResponse) {
+        startActivity(Intent(this, PlanetsDetailsActivity::class.java).apply {
             putExtra(Params.PLANET_FILM, planets)
         })
     }
 
     companion object {
-        const val ERROR_MENSSAGE = "Sentimos muito, ocorreu um erro"
+        const val ERROR_MESSAGE = "Sentimos muito, ocorreu um erro"
     }
 }

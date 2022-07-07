@@ -1,25 +1,19 @@
 package feature.character.presentation
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import feature.character.data.CharacterInfra
 import feature.character.domain.models.CharactersPresentation
-import feature.utils.ScreenState
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.plusAssign
-import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
+import feature.utils.StateMachine
+import feature.utils.stateMachineFunction
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 
 internal class CharactersViewModel : ViewModel() {
 
     private val service = CharacterInfra()
-    private val mutableCharacterState = MutableLiveData<ScreenState<CharactersPresentation>>()
-    fun getScreenStateCharacter() = mutableCharacterState as LiveData<ScreenState<CharactersPresentation>>
 
-    suspend fun retrievePresentation() {
-        // TODO implement state machine here
-        service.listCharacter()
-    }
+    fun retrievePresentation(): Flow<StateMachine<CharactersPresentation>> =
+        stateMachineFunction(Dispatchers.Default) {
+            service.listCharacter()
+        }
 }

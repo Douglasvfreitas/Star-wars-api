@@ -3,10 +3,10 @@ package feature.planet.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.starwars.R
-import feature.planet.domain.models.Planet
 import feature.Params
 
 import com.squareup.picasso.Picasso
+import feature.planet.data.models.PlanetDetailsResponse
 import kotlinx.android.synthetic.main.activity_planet_details.*
 
 
@@ -20,10 +20,10 @@ class PlanetsDetailsActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        val planet = intent.extras?.getSerializable(Params.PLANET_FILM) as? Planet
+        val planet = intent.extras?.getSerializable(Params.PLANET_FILM) as? PlanetDetailsResponse
 
         planet?.let {
-            setImage(planet.urlImage)
+            setImage(planet.url)
             planetNameDetails.text = planet.name
             rotationDetails.text = planet.rotation
             orbitalPeriodDetails.text = planet.orbital
