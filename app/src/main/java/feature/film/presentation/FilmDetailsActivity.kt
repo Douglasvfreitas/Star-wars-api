@@ -23,7 +23,6 @@ class FilmDetailsActivity : AppCompatActivity() {
 
         film?.let {
             setImage(film.url)
-            //filmImageDet.setImageResource(film.retrieveEpisodeImage())
             filmTitleTv.text = getFilmTitle(film)
             filmOpening.text = film.openingCrawl
             directorFilm.text = film.director
@@ -36,7 +35,7 @@ class FilmDetailsActivity : AppCompatActivity() {
             .get()
             .load(urlImage)
             .error(R.drawable.episode1)
-            .into(characterImage)
+            .into(filmImageDet)
     }
 
     private fun getFilmTitle(film: Film): String {

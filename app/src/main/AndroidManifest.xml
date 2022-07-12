@@ -26,9 +26,9 @@
         </activity>
 
         <activity
-            android:name="com.example.starwars.feature.film.presentation.FilmDetailsActivity"
+            android:name="feature.film.presentation.FilmDetailsActivity"
             android:theme="@style/Theme.StarWars.NoActionBar"/>
-        <activity android:name="com.example.starwars.feature.film.presentation.FilmsActivity"/>
+        <activity android:name="feature.film.presentation.FilmsActivity"/>
 
         <activity android:name="feature.character.presentation.CharactersActivity"
             android:theme="@style/Theme.StarWars.NoActionBar">

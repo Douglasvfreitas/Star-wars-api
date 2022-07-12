@@ -22,6 +22,7 @@ data class Film(
             6 -> R.string.episode_tree_title
             1 -> R.string.episode_four_title
             2 -> R.string.episode_five_title
+            3 -> R.string.episode_six_title
             else -> R.string.unknown_episode_title
         }
     }
