@@ -1,6 +1,7 @@
 package feature.film.domain.models
 
 import com.example.starwars.R
+import java.io.Serializable
 
 data class Film(
     val title: String,
@@ -12,7 +13,7 @@ data class Film(
     val characters: List<String> = emptyList(),
     val url: String,
     val id: String
-) {
+): Serializable {
 
     fun retrieveEpisode(): Int {
         return when (episodeId) {
