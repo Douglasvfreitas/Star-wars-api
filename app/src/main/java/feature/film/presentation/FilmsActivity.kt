@@ -6,12 +6,14 @@ import android.view.Gravity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.example.starwars.R
 import feature.Params
 import feature.film.domain.models.Film
+import feature.film.domain.models.FilmsPresentation
 import feature.film.presentation.adapter.FilmsAdapter
-import feature.utils.ScreenState
+import feature.utils.StateMachine
+import feature.utils.collectIn
 import kotlinx.android.synthetic.main.activity_films.*
 
 class FilmsActivity : AppCompatActivity() {
@@ -23,18 +25,19 @@ class FilmsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_films)
 
         handleScreenStates()
-        viewModel.retrieveMovies()
         listenButton()
     }
 
     private fun handleScreenStates() {
-        viewModel.getScreenState().observe(this, Observer { screenState ->
-            when (screenState) {
-                is ScreenState.Error -> handleError()
-                is ScreenState.Loading -> handleLoading(true)
-                is ScreenState.Result -> handleResult(screenState.value)
+        viewModel.retrieveMovies().collectIn(lifecycleScope) { event ->
+            when (event) {
+                StateMachine.Start -> handleLoading(true)
+                is StateMachine.Success -> handleResult(event.value)
+                is StateMachine.Failure -> handleError()
+                StateMachine.Finish -> handleLoading(false)
             }
-        })
+
+        }
     }
 
     private fun handleLoading(isLoading: Boolean) {
@@ -49,11 +52,11 @@ class FilmsActivity : AppCompatActivity() {
         }
     }
 
-    private fun handleResult(films: List<Film>) {
+    private fun handleResult(presentation: FilmsPresentation) {
         handleLoading(false)
         filmsRv.adapter = FilmsAdapter(
-            films = films, navigateToDetails = {
-                moveToFilmDetails(it)
+            films = presentation.films, navigateToDetails = { film ->
+                moveToFilmDetails(film)
             })
     }
 

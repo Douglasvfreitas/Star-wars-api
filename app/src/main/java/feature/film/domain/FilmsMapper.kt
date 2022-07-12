@@ -1,10 +1,12 @@
 package feature.film.domain
 
+import feature.ImageTypeResponse.FILM_TYPE
 import feature.film.data.models.FilmDetailsResponse
 import feature.film.data.models.FilmsResponse
 import feature.film.domain.models.Film
 import feature.film.domain.models.FilmsPresentation
 import feature.utils.retrieveIdForImage
+import feature.utils.retrieveImageById
 
 object FilmsMapper {
     fun toDomain(response: FilmsResponse): FilmsPresentation =
@@ -24,7 +26,7 @@ object FilmsMapper {
                 producer = filmDetailsResponse.producer,
                 releaseDate = filmDetailsResponse.releaseDate,
                 characters = filmDetailsResponse.characters.orEmpty(),
-                url = filmDetailsResponse.url,
+                url = retrieveImageById(filmId, FILM_TYPE),
                 id = filmId
             )
         }
